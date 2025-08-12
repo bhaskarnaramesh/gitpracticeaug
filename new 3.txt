@@ -1,0 +1,69 @@
+Azure NSG:
+
+It is a security feature provided by the Microsoft Azure that acts like firewall of your networking.
+
+Example : As same as Security Guard who checks who is coming inside the community or who is going outside 
+
+
+How NSG is working:
+
+In the backend,
+
+
+Based on below 5 important things helps to allow or deny the traffic.
+
+1) Source IP = From where My VM is getting traffic - From which IP 172.12.36.4 or Which IP Range 10.0.0.1/24 
+2) Destination IP : To which VM it is connecting to?
+3) Port Number : 3389, 21 or 22
+4) Protocol: TCP or UDP
+5) Priority : 100 - 4096 ( Range) 
+6) Priority values are always unique. you can use same Priority number for two rules in the same NSG.
+7) Always Azure Checks numnbers from LOW to High.
+8) 
+
+ Priority :  
+ 
+ - It is a number 
+ - you are telling that based on this number provide importance.
+ - Less number is very high priority
+ 
+ Allow  - RDP - 3389 - TCP - 500(Priority)
+ 
+ Deny - RDP - 3389 - TCP - 499 (Priority) 
+ 
+ 
+ Allow - SSH traffic - to my VM - 22 - TCP - 4000 ( 100-4096)
+ 
+  Deny - SSH traffic - to my VM - 22 - TCP - 1893 ( 100-4096) 
+  
+   Allow  - RDP - 3389 - TCP - 500(Priority)
+  
+  
+  
+  
+  Where i can attach my Nsg:
+  
+  You can apply your NSG in two ways,
+  
+  
+  1) NIC level
+  2) Subnet level
+  
+  
+  NIC Level : Rules will apply only to that specific VM
+  
+  
+  
+  Types of Rules in NSG
+  
+  
+Each NSG has two types of rules:
+
+Inbound Rules – control traffic into the resource 
+Outbound Rules – control traffic leaving the resource
+
+  
+  
+  
+ 
+ 
